@@ -1,0 +1,59 @@
+<div class="search-result" ng-controller="SearchResult">
+  <div class="container">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Автор</th>
+        <th>Тема</th>
+        <th>Кол-во ответов</th>
+        <th>Теги</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="#author">{{author}}</a></td>
+        <td><a href="#theme">{{theme}}</a></td>
+        <td><a href="#count">{{count}}</a></td>
+        <td>
+          <a href="#" ng-repeat="tag in tags">{{tag.name}}</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!-- ПАНЕЛЬ БЫСТРОГО ДОСТУПА -->
+    <div class="quick-display-panel">
+      <!-- АВТОР -->
+      <table class="table table-striped" id="author">
+        <thead>
+        <tr>
+          <th>Автор</th>
+          <th>Тема</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="#author">qqq</a></td>
+          <td><a href="#theme">qq1</a></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <!-- ТЕГ -->
+      <table class="table table-striped" id="tag">
+        <thead>
+        <tr>
+          <th>Тег</th>
+          <th>Тема</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><a href="#author">qqq</a></td>
+          <td><a href="#theme">qq1</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
