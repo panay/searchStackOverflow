@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="searchApp">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Search on StackOverflow</title>
+    <title>SearchForStackOverflow</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
-          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="libs/bower_components/bootstrap-css-only/css/bootstrap.min.css">
 </head>
 <body>
-<header class="container text-center">
-    <h1>SearchStackOverflow</h1>
+<header>
+    <h1 class="text-center">Search For StackOverflow</h1>
+    <p class="text-center">тестовое задание</p>
 </header>
 
-<div class="container" id="wrapper" ng-app="searchApp">
-
+<div class="container" ng-controller="SearchFormController">
+    <form name="searchForm">
+        <fieldset>
+            <label for="searchInput">Input question:</label>
+            <input type="text" id="searchInput" ng-model="search.input" class="form-control">
+        </fieldset>
+        <br>
+        <input class="btn-block btn-lg btn btn-default" type="submit" ng-click="getResult(search, searchForm)" value="Search">
+    </form>
 </div>
+
+<ng-view></ng-view>
+
+<!-- scripts -->
+<script src="libs/bower_components/angular/angular.min.js"></script>
+<script src="libs/bower_components/angular-route/angular-route.min.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/controllers/SearchFormController.js"></script>
+<script src="app/controllers/SearchResultController.js"></script>
+<script src="app/controllers/AnswersController.js"></script>
 </body>
 </html>
