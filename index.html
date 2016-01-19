@@ -12,17 +12,6 @@
     <p class="text-center">тестовое задание</p>
 </header>
 
-<div class="container" ng-controller="SearchFormController">
-    <form name="searchForm">
-        <fieldset>
-            <label for="searchInput">Input question:</label>
-            <input type="text" id="searchInput" ng-model="search.input" class="form-control">
-        </fieldset>
-        <br>
-        <input class="btn-block btn-lg btn btn-default" type="submit" ng-click="getResult(search, searchForm)" value="Search">
-    </form>
-</div>
-
 <ng-view></ng-view>
 
 <!-- scripts -->
