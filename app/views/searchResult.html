@@ -1,5 +1,10 @@
 <div class="container">
-  <h2>Результаты поиска</h2>
-  <b>{{search.title}}</b>
-  <i>{{search.author}}</i>
+  <h2>Результаты поиска <i>{{query}}</i></h2>
+
+  <div ng-repeat="res in result">
+    <p>Author: <b>{{res.owner.display_name}}</b></p>
+    <p>Theme: <a href="#/answers/{{res.question_id}}" title="{{res.title}}"><b>{{res.title}}</b></a></p>
+    <p>Answers Count: <b>{{res.answer_count}}</b></p>
+    <p>Tags: <a href="#{{tag}}" title="{{tag}}" ng-repeat="tag in res.tags">{{tag}}</a></p>
+  </div>
 </div>
