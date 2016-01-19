@@ -1,8 +1,5 @@
 var searchApp = angular.module('searchApp', ['ngRoute', 'ngSanitize'])
-    .config(function ($routeProvider, $httpProvider) {
-
-      $httpProvider.defaults.useXDomain = true;
-      delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    .config(function ($routeProvider) {
 
       $routeProvider.when('/search', {
         templateUrl: './app/views/searchForm.html',
