@@ -8,7 +8,7 @@ searchApp.controller('SearchFormController', function ($scope, $http, $location)
 
     if (searchForm.$valid) {
       $http.get(
-          'https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&title=' + search.input + '&site=stackoverflow'
+          'https://api.stackexchange.com/2.2/search/advanced?order=asc&sort=activity&title=' + search.input + '&site=stackoverflow'
       ).success(function (json) {
         $location.path('/search-result').search({'query': search.input, 'result': JSON.stringify(json.items)});
       });

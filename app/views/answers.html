@@ -1,8 +1,17 @@
 <div class="container">
-  <h2 ng-bind-html="answers[0].title">?</h2>
+  <h2  ng-bind-html="answers[0].title">?</h2>
+  <div class="question"></div>
 
-  <h3>Ответы:</h3>
-  <ol class="list-group">
-    <li class="list-group-item" ng-repeat="answer in answers" ng-bind-html="answer.body"></li>
-  </ol>
+  <div class="content">
+    <h4>Ответы:</h4>
+
+    <div class="answers-list">
+      <div class="answer" ng-repeat="answer in answers">
+        <div ng-bind-html="answer.body"></div>
+        <p class="author">Автор: <strong>{{answer.owner.display_name}}</strong></p>
+      </div>
+    </div>
+  </div>
+
+
 </div>

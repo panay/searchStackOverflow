@@ -1,3 +1,39 @@
 .list-group-item {
   margin-top: 20px;
 }
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.content h4 {
+  margin-top: 30px;
+}
+
+.answers-list {
+  padding-bottom: 40px;
+}
+
+.answers-list .answer {
+  margin-top: 40px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 20px;
+}

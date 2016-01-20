@@ -1,10 +1,28 @@
 <div class="container">
   <h2>Результаты поиска <i>{{query}}</i></h2>
 
-  <div ng-repeat="res in result">
-    <p>Author: <b>{{res.owner.display_name}}</b></p>
-    <p>Theme: <a href="#/answers/{{res.question_id}}" title="{{res.title}}"><b ng-bind-html="res.title"></b></a></p>
-    <p>Answers Count: <b>{{res.answer_count}}</b></p>
-    <p>Tags: <a href="#{{tag}}" title="{{tag}}" ng-repeat="tag in res.tags">{{tag}}</a></p>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Автор вопроса</th>
+      <th>Тема</th>
+      <th>Кол-во ответов</th>
+      <th>Теги</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="res in result" ng-if="res.answer_count">
+      <td><a href="#{{res.owner.display_name}}" title="{{res.owner.display_name}}">{{res.owner.display_name}}</a></td>
+      <td><a href="#/answers/{{res.question_id}}" title="{{res.title}}" ng-bind-html="res.title"></a></td>
+      <td class="text-center"><a href="#/answers/{{res.question_id}}" title="">{{res.answer_count}}</a></td>
+      <td>
+        <a class="tag" href="#{{tag}}" title="{{tag}}" ng-repeat="tag in res.tags"><kbd>{{tag}}</kbd></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="quick-show-panel">
+
   </div>
 </div>
