@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table table-striped" ng-controller="SearchResultController">
+    <thead>
+    <tr>
+      <th>Автор вопроса</th>
+      <th>Тема</th>
+      <th>Кол-во ответов</th>
+      <th>Теги</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="res in quickViewsResult" ng-if="res.answer_count">
+      <td>{{res.owner.display_name}}</td>
+      <td><a href="#/answers/{{res.question_id}}" title="{{res.title}}" ng-bind-html="res.title"></a></td>
+      <td class="text-center"><a href="#/answers/{{res.question_id}}" title="">{{res.answer_count}}</a></td>
+      <td>
+        <span class="tag" title="{{tag}}" ng-repeat="tag in res.tags"><kbd>{{tag}}</kbd></span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

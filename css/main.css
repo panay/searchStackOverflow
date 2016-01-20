@@ -12,6 +12,12 @@
   color: #333;
   font-size: 24px;
   text-align: center;
+  display: table;
+}
+
+.loading > span {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .tag {
@@ -36,4 +42,47 @@
   -webkit-border-radius: 5px;
   border-radius: 5px;
   padding: 20px;
+}
+
+.error-msg {
+  max-width: 50%;
+  margin: 25px auto;
+}
+
+.overlay-error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: table;
+  background: rgba(255, 255, 255, 0.6);
+}
+.overlay-error > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.overlay-error > span .btn {
+  margin-top: 10px;
+}
+
+.quick-show-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  padding: 40px 0;
+  overflow: auto;
+}
+
+.quick-show-panel a[href="#close"] {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+body.show-panel {
+  overflow: hidden;
 }
