@@ -1,0 +1,15 @@
+<div class="container">
+  <form name="searchForm">
+    <fieldset>
+      <label for="searchInput">Введите вопрос:</label>
+      <input type="text" id="searchInput" name="searchInput" ng-model="form.input" required class="form-control">
+    </fieldset>
+    <br>
+    <input class="btn-block btn-lg btn btn-success" type="submit" ng-click="getResult(form, searchForm)"
+           value="Искать">
+  </form>
+
+  <div ng-show="loading" class="loading"><span>Загрузка...</span></div>
+
+  <div class="error-msg text-center text-danger" ng-show="errorMessage">{{errorMessage}}</div>
+</div>

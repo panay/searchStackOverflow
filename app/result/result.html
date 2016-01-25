@@ -1,0 +1,38 @@
+<div class="container">
+  <h2>Результаты поиска <i>{{query}}</i></h2>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Автор вопроса</th>
+      <th>Тема</th>
+      <th>Кол-во ответов</th>
+      <th>Теги</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="res in result" ng-if="res.answer_count">
+      <td><a href="#{{res.owner.display_name}}" title="{{res.owner.display_name}}" ng-click="getQuestionsByAuthor($event, res.owner.user_id);">{{res.owner.display_name}}</a></td>
+      <td><a href="#/answers/{{res.question_id}}" title="{{res.title}}" ng-bind-html="res.title"></a></td>
+      <td class="text-center"><a href="#/answers/{{res.question_id}}" title="">{{res.answer_count}}</a></td>
+      <td>
+        <a class="tag" href="#{{tag}}" title="{{tag}}" ng-repeat="tag in res.tags" ng-click="getQuestionsByTag($event, tag);"><kbd>{{tag}}</kbd></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div ng-show="loading" class="loading"><span>Загрузка...</span></div>
+
+  <div class="overlay-error text-center text-danger" ng-show="errorMessage">
+    <span>
+      {{errorMessage}}<br/>
+      <button class="btn btn-danger" ng-click="closeMessage($event);">Закрыть</button>
+    </span>
+  </div>
+
+  <div class="quick-show-panel" ng-show="showedPanel">
+    <a href="#close" title="Закрыть" ng-click="closePanel($event);">Закрыть</a>
+    <ng-include src="'./app/views/partials/info.html'"></ng-include>
+  </div>
+</div>

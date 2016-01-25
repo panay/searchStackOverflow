@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="searchApp">
+<html ng-app="app">
 <head>
   <meta charset="UTF-8">
   <title>SearchForStackOverflow</title>
@@ -13,16 +13,16 @@
   <p class="text-center">тестовое задание</p>
 </header>
 
-<ng-view></ng-view>
+<div ui-view></div>
 
 <!-- scripts -->
 <script src="libs/bower_components/angular/angular.min.js"></script>
-<script src="libs/bower_components/angular-route/angular-route.min.js"></script>
+<script src="libs/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="libs/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
 
-<script src="app/app.js"></script>
-<script src="app/controllers/SearchFormController.js"></script>
-<script src="app/controllers/SearchResultController.js"></script>
-<script src="app/controllers/AnswersController.js"></script>
+<script src="app/app.module.js"></script>
+<script src="app/form/form.controller.js"></script>
+<!--<script src="app/controllers/SearchResultController.js"></script>-->
+<!--<script src="app/controllers/AnswersController.js"></script>-->
 </body>
 </html>
