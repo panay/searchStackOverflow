@@ -24,5 +24,4 @@
           controller: 'AnswersController as answers'
         });
   }
-
 })();

@@ -1,5 +1,5 @@
 <div class="container">
-  <table class="table table-striped" ng-controller="SearchResultController">
+  <table class="table table-striped">
     <thead>
     <tr>
       <th>Автор вопроса</th>
@@ -9,7 +9,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr ng-repeat="res in quickViewsResult" ng-if="res.answer_count">
+    <tr ng-repeat="res in result.quickViewsResult" ng-if="res.answer_count">
       <td>{{res.owner.display_name}}</td>
       <td><a href="#/answers/{{res.question_id}}" title="{{res.title}}" ng-bind-html="res.title"></a></td>
       <td class="text-center"><a href="#/answers/{{res.question_id}}" title="">{{res.answer_count}}</a></td>

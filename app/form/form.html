@@ -5,11 +5,12 @@
       <input type="text" id="searchInput" name="searchInput" ng-model="form.input" required class="form-control">
     </fieldset>
     <br>
-    <input class="btn-block btn-lg btn btn-success" type="submit" ng-click="getResult(form, searchForm)"
+    <input class="btn-block btn-lg btn btn-success" type="submit" ng-click="form.getResult(form, searchForm)"
            value="Искать">
   </form>
 
   <div ng-show="loading" class="loading"><span>Загрузка...</span></div>
 
-  <div class="error-msg text-center text-danger" ng-show="errorMessage">{{errorMessage}}</div>
+  <div error-message="form"></div>
+  <!--<div class="error-msg text-center text-danger" ng-show="form.errorMessage">{{form.errorMessage}}</div>-->
 </div>
