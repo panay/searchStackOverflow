@@ -3,28 +3,39 @@
   angular.module('app')
     .controller('FormController', FormController);
 
-  function FormController($http, $location) {
+  FormController.$inject = ['dataservice', '$location'];
+
+  function FormController(dataservice, $location) {
 
     var vm = this;
 
-    vm.getResult = function (search, searchForm) {
+    vm.getResult = getResult;
+    vm.loading = false;
+    vm.error = {};
 
-      vm.loading = false;
+    function getResult(search, searchForm) {
 
       if (searchForm.$valid) {
         vm.loading = true;
 
-        $http.get(
+       return dataservice.getResultData(
           'https://api.stackexchange.com/2.2/search/advanced?order=asc&sort=activity&title=' + search.input + '&site=stackoverflow'
-        ).success(function (json) {
+        ).then(complete)
+          .catch(failed);
+      }
 
-          $location.path('/search-result').search({'query': search.input, 'result': JSON.stringify(json.items)});
+      function complete(data) {
+        if(data.status && data.status !== 200) {
+          failed(data);
+        } else {
+          $location.path('/search-result').search({'query': search.input, 'result': data});
           vm.loading = false;
-        }).error(function (json) {
+        }
+      }
 
-          vm.errorMessage = json.error_message;
-          vm.loading = false;
-        });
+      function failed(error) {
+        vm.error = error;
+        vm.loading = false;
       }
     }
   }

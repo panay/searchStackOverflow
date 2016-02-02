@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   angular.module('app')
     .directive('errorMessage', errorMessage);
@@ -9,7 +9,7 @@
       templateUrl: 'app/directives/error-message/error-message.html',
       restrict: 'AE',
       scope: {
-        elem: '='
+        error: '='
       }
     };
   }

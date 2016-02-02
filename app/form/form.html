@@ -9,8 +9,6 @@
            value="Искать">
   </form>
 
-  <div ng-show="loading" class="loading"><span>Загрузка...</span></div>
-
-  <div error-message="form"></div>
-  <!--<div class="error-msg text-center text-danger" ng-show="form.errorMessage">{{form.errorMessage}}</div>-->
+  <div ng-show="form.loading" class="loading"><span>Загрузка...</span></div>
+  <div error-message error="form"></div>
 </div>

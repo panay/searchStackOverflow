@@ -1,1 +1,4 @@
-<div class="error-msg text-center text-danger" ng-show="elem.errorMessage">{{elem.errorMessage}}</div>
+<div ng-show="error.error">
+  <h3 class="error-msg text-center text-danger">{{error.error.title}}</h3>
+  <div class="error-msg text-center text-danger">{{error.error.message}}</div>
+</div>
