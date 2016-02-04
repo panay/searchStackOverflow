@@ -54,7 +54,7 @@
       event.preventDefault();
 
       getInfo(
-        'https://api.stackexchange.com/2.2/userse/' + user_id + '/questions?order=desc&sort=votes&site=stackoverflow'
+        'https://api.stackexchange.com/2.2/users/' + user_id + '/questions?order=desc&sort=votes&site=stackoverflow'
       );
     }
 
