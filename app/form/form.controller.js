@@ -28,7 +28,7 @@
         if(data.status && data.status !== 200) {
           failed(data);
         } else {
-          $location.path('/search-result').search({'query': search.input, 'result': data});
+          $location.path('/result').search({'query': search.input, 'result': data});
           vm.loading = false;
         }
       }
