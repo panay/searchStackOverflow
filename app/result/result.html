@@ -26,11 +26,11 @@
 
   <div ng-show="result.loading" class="loading"><span>Загрузка...</span></div>
 
-  <div class="overlay-error text-center text-danger" ng-show="result.errorMessage">
-    <span>
-      <span error-message error="result"></span><br/>
+  <div class="overlay-error text-center text-danger" ng-show="result.error">
+    <div>
+      <div error-message error="result"></div>
       <button class="btn btn-danger" ng-click="result.closeMessage($event);">Закрыть</button>
-    </span>
+    </div>
   </div>
 
   <quick-panel></quick-panel>
