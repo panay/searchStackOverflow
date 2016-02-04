@@ -28,7 +28,7 @@
 
   <div class="overlay-error text-center text-danger" ng-show="result.errorMessage">
     <span>
-      {{result.errorMessage}}<br/>
+      <span error-message error="result"></span><br/>
       <button class="btn btn-danger" ng-click="result.closeMessage($event);">Закрыть</button>
     </span>
   </div>
